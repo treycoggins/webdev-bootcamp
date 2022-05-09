@@ -1,0 +1,35 @@
+<%- include('partials/head') %>
+
+  <%- include('partials/navbar') %>
+  
+  <h1>The random number is: <%= rand %></h1>
+
+
+  <!-- Using the code below, we can embed javascript logic that will not render to the html -->
+
+  <% if(rand % 2 === 0) { %>
+
+    <h2>The random number is even!</h2>
+
+  <% } else { %>
+    
+    <h2>The random number is odd!</h2> 
+
+  <% } %>
+
+  <!-- A second way is by rendering the value of a ternary operator-->
+
+  <h1>The random number is: <%= rand %></h1>
+  <h2><%= rand % 2 === 0 ? 'The number was even!' : 'The number is odd!' %></h2>
+
+  <!-- A third way to evaluate rand would be in the route (in index.js), as a boolean and rendering based on that -->
+  
+  <h1>The random number is: <%= rand %></h1>
+
+  <% if (isEven) { %>
+    <h2>The number was even!</h2>
+  <% } else { %>
+    <h2>The number was odd!</h2> 
+  <% } %>
+
+<%- include('partials/footer') %>

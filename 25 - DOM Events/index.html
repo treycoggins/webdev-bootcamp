@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Events</title>
+    <style>
+      button {
+        width: 100px;
+        height: 100px;
+        margin: 0px, 20px, 20px;
+      }
+      section {
+        display: block;
+        margin-bottom: 100px;
+      }
+      #catsHeading {
+          display: inline;
+      }
+
+      .hide {
+        display: none;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <h1>Events</h1>
+      <button id="v1" onclick="alert('You clicked me')">Click me</button>
+      <button id="v2">Click Me (2nd version)</button>
+      <button id="v3">Scream</button>
+    </section>
+
+
+    <section>
+      <h1>Events & the keyword 'this'</h1>
+      <button class='btn'>Click!</button>
+      <button class='btn'>Click!</button>
+      <button class='btn'>Click!</button>
+      <button class='btn'>Click!</button>
+      
+      <h3>Click Me!</h3>
+      <h3>Click Me!</h3>
+      <h3>Click Me!</h3>
+      <h3>Click Me!</h3>    
+    </section>
+
+
+
+    <section>
+      <h1>Keyboard Events & Event Objects</h1>
+      <button id="button2">Click</button>
+      <input type="text">
+    </section>
+
+
+
+    <section>
+      <h1>Form Events & PreventDefault *NEW*</h1>
+      <form action="/shelter" id="shelterForm">
+        <input type="text" id="catName">
+        <!--using the submit button will redirect the page to the URL in the action attribute. In order to prevent that default action, use preventDefault
+            -->
+        <button>Submit</button>
+      </form>
+      <h3 id="catsHeading">Available Cats</h3>
+        <ul id="catsList">
+        </ul>
+    </section>
+
+
+    <section>
+      <h1>Prevent Default OLD</h1>
+      <form action="/dogs" id="tweetForm">
+        <input type="text" name="username" placeholder="username">
+        <input type="text" name="tweet" placeholder="tweet">
+        <button>Post Tweet</button>
+      </form>
+      <h3>Tweets:</h3>
+      <ul id="tweets"></ul>
+    </section>
+
+
+    <section>
+      <h1 id="changeEventHeading">Change Events</h1>
+      <h3>Type Below:</h3>
+      <input type="text" id="changeEventInput">
+    </section>
+
+
+    <!-- Event Bubbling occurs when there are events nested in elements, so each one at the lower levels trigger events at a higher level-->
+    <section onclick="alert('section clicked')">
+      <h1>Event Bubbling</h1>
+      <p onclick="alert('paragraph clicked')">
+        <button onclick="alert('button clicked')">Click me!</button>
+        I am a paragraph. Click me.
+      </p>
+
+      <!-- Sometimes you want this bubbling behavior, but most of the time not -->
+
+      <div class="container" id="eventBubbleContainer">
+        Click to Hide
+        <button id="eventBubbleButton">Change color</button>
+      </div>
+
+    </section>
+
+
+    <section>
+      <h1>Event Delegation</h1>
+        <form action="/dogs" id="eventDelegationForm">
+          <input type="text" name="username" placeholder="username">
+          <input type="text" name="tweet" placeholder="tweet">
+          <button>Post Tweet</button>
+        </form>
+        <h3>Tweets:</h3>
+        <ul id="eventDelegationTweets"></ul>
+    </section>
+
+
+
+    <script src="introToEvents.js"></script>
+    <script src="eventsAndThis.js"></script>
+    <script src="keyboardAndObjectEvents.js"></script>
+    <script src="preventDefaultNEW.js"></script>
+    <script src="preventDefaultOLD.js"></script>
+    <script src="changeEvents.js"></script>
+    <script src="eventBubbling.js"></script>
+    <script src="eventDelegation.js"></script>
+  </body>
+</html>

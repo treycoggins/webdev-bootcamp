@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random w/ Even/Odd evaluation</title>
+</head>
+<body>
+  
+  <h1>The random number is: <%= rand %></h1>
+
+
+  <!-- Using the code below, we can embed javascript logic that will not render to the html -->
+
+  <% if(rand % 2 === 0) { %>
+
+    <h2>The random number is even!</h2>
+
+  <% } else { %>
+    
+    <h2>The random number is odd!</h2> 
+
+  <% } %>
+
+  <!-- A second way is by rendering the value of a ternary operator-->
+
+  <h1>The random number is: <%= rand %></h1>
+  <h2><%= rand % 2 === 0 ? 'The number was even!' : 'The number is odd!' %></h2>
+
+  <!-- A third way to evaluate rand would be in the route (in index.js), as a boolean and rendering based on that -->
+  
+  <h1>The random number is: <%= rand %></h1>
+
+  <% if (isEven) { %>
+    <h2>The number was even!</h2>
+  <% } else { %>
+    <h2>The number was odd!</h2> 
+  <% } %>
+
+
+</body>
+</html>
