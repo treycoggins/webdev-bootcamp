@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 app.get('/random', (req, res) => {
   const rand = Math.floor(Math.random() * 10) + 1;
-  // a third way of rendering even/odd in random.ejs
+  // a second way of rendering even/odd in random.ejs
   let isEven = false;
   if (rand % 2 === 0) {
     isEven = true;
