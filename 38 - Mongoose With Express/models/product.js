@@ -12,10 +12,11 @@ const productSchema = new mongoose.Schema({
   },
   category: {
     type: String,
+    lowercase: true,
     enum: ['fruit', 'vegetable', 'dairy']
   }
 })
 
-const product = mongoose.model('Product', productSchema);
+const Product = mongoose.model('Product', productSchema);
 
 module.exports = Product;
